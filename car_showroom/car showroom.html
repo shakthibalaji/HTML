@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Car World</title>
+  <link rel="icon" href="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\ferrari.jpg">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #131212d7;
+    }
+    h1 {
+      text-align: center;
+    }
+    .search-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+    }
+    .car-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .car-item {
+      background-color: rgb(252, 247, 247);
+      padding: 10px;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+    }
+    .car-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    #contact {
+      margin-top: 40px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚗 Car World</h1>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search car name..." onkeyup="filterCars()" />
+  </div>
+
+  <div class="car-grid" id="carGrid">
+    <!-- Car items -->
+    <div class="car-item" data-name="Ferrari"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\ferrari.jpg"><p>Ferrari</p></div>
+    <div class="car-item" data-name="Ford Mustang"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\Ford-Mustang.jpg"><p>Ford Mustang</p></div>
+    <div class="car-item" data-name="BMW M3"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\BMW M3.png"><p>BMW M3</p></div>
+    <div class="car-item" data-name="Audi R8"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\Audi-R8-Coup.jpeg"><p>Audi R8</p></div>
+    <div class="car-item" data-name="Lamborghini"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\lamborghini.jpeg"><p>Lamborghini</p></div>
+    <div class="car-item" data-name="Mercedes-Benz"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\BENZ.jpg"><p>Mercedes-Benz</p></div>
+    <div class="car-item" data-name="Nissan GTR"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\NISSAN GTR.jpg"><p>Nissan GTR</p></div>
+    <div class="car-item" data-name="Porsche"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\porsche_911_gt3_rs_2022_4k_6-HD.jpg"><p>Porsche</p></div>
+    <div class="car-item" data-name="Chevrolet Camaro"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\2020-Chevy-Camaro.jpg"><p>Chevrolet Camaro</p></div>
+    <div class="car-item" data-name="Tesla Model S"><img src="C:\Users\sakth\OneDrive\Desktop\showroom project html\HTML\car showroom\R.jpg"><p>Tesla Model S</p></div>
+  </div>
+
+  <div id="contact">
+    <h2>📞 Contact Us</h2>
+    <p>Email: contact@carworld.com</p>
+    <p>Phone: +91-1234567890</p>
+    <p>Location: Chennai, India</p>
+  </div>
+
+  <script>
+    function filterCars() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cars = document.querySelectorAll(".car-item");
+      cars.forEach(car => {
+        const name = car.getAttribute("data-name").toLowerCase();
+        car.style.display = name.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+
+</body>
+</html>
+
